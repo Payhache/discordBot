@@ -1,0 +1,23 @@
+[
+    {
+        "id" : "796046003899334677",
+        "name" : "Bot",
+        "firstName" : "News",
+        "situation" : "Actuellement employé par Payhache et Khepri",
+        "cheerMessage" : "Si tu m'appelles 'NouillesBot', j'te ban direct !"
+    },
+    {
+        "id" : "408312707645964307",
+        "name" : "Rogues",
+        "firstName" : "Maxime",
+        "situation" : "Presque employé à Brignais",
+        "cheerMessage" : "Allez les coupains !! "
+    },
+    {
+        "id" : "145277470503862273",
+        "name" : "Laurency",
+        "firstName" : "Pierre-Henri",
+        "situation" : "Bientôt dev à la SNCF",
+        "cheerMessage" : "Arrêtez de feed, bande de noobs !!!"
+    }
+]
