@@ -27,18 +27,19 @@ bot.on('message', message  => {
 
 bot.on('message', message => {
     if(message.content.includes(`!news`) && message.author.id !== botId) {
-        // défini l'user à chercher
-        let IdOfUserToDisplay = message.content.match(ID_REGEX).join('');
 
-        // affiche l'user selectionné
+        let IdOfUserToDisplay = message.content.match(ID_REGEX).join('');
         let userToDisplay = usersInfos.find(user => user.id === IdOfUserToDisplay);
-        
-        // envoie des infos sur la personne taguée en mp
-        message.author.send(`
-        Hello ! 
-        Voilà des nouvelles de ` + userToDisplay.firstName + ` ` + userToDisplay.name + ` : 
-        Sa situation : ` + userToDisplay.situation + `
-        Son petit message d'encouragement : ` + userToDisplay.cheerMessage);
+        let news = new Discord.MessageEmbed();
+        message.author.send(
+            news.setColor('#0099ff')
+                .setTitle(`Voila des news de ${userToDisplay.firstName} ${userToDisplay.name}`)
+                .addField('Sa situation professionnelle ', userToDisplay.situation, false)
+                .addField('Et comme il est sympas, il t\'encourage !', userToDisplay.cheerMessage, false))
+        // `Hello ! 
+        // Voilà des nouvelles de ` + userToDisplay.firstName + ` ` + userToDisplay.name + ` : 
+        // Sa situation : ` + userToDisplay.situation + `
+        // Son petit message d'encouragement : ` + userToDisplay.cheerMessage);
     }
 })
 
